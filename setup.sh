@@ -9,6 +9,7 @@ done
 
 cd ..
 
+
 if [ -d "$HOME/.config/nvim" ]; then
   echo "nvim already exists!"
   exit 1
