@@ -1,0 +1,49 @@
+define bp(b, v) {
+	local o = base(b);
+	print v;
+	base(o);
+}
+
+define hex(v) {
+	return bp(16, v);
+}
+
+define dec(v) {
+	return bp(10, v);
+}
+
+define bin(v) {
+	return bp(2, v);
+}
+
+define kb(v) {
+	return v * 1024;
+}
+
+define mb(v) {
+	return kb(v) * 1024;
+}
+
+define gb(v) {
+	return mb(v) * 1024;
+}
+
+define tb(v) {
+	return gb(v) * 1024;
+}
+
+define civ6_to_gpt(g) {
+	return floor((g + 0.5) / 30 * 1.82704)
+}
+
+define civ6_from_gpt(gpt) {
+	return round(gpt * 30 / 1.82704)
+}
+
+define civ6_debt(g, gpt) {
+	g = min(civ6_from_gpt(gpt), g);
+	gpt = min(gpt, civ6_to_gpt(g));
+	print civ6_from_gpt(gpt);
+	print gpt;
+}
+
