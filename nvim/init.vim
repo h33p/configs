@@ -86,10 +86,6 @@ set number relativenumber
 " Highlight current line
 set cursorline
 
-" Default language settings
-set tabstop=4
-set shiftwidth=4
-
 " rust.vim
 filetype plugin indent on
 
@@ -152,11 +148,20 @@ lua vim.api.nvim_command [[autocmd CursorMovedI * lua require'utils'.clearBlameV
 " Misc.
 set updatetime=60
 
+" Default language settings
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
 " Language specific options
 autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype javascriptreact setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype typescriptreact setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype typescript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype java setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype terraform setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype hcl setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 " Disable mouse
 set mouse=

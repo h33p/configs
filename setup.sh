@@ -9,6 +9,8 @@ done
 
 cd ..
 
+# Install neovim using pip
+pip install neovim
 
 if [ -d "$HOME/.config/nvim" ]; then
   echo "nvim already exists!"
