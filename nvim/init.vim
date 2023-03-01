@@ -70,7 +70,7 @@ highlight SyntasticWarningSign ctermfg=173
 let g:indentLine_setColors = 1
 let g:indentLine_color_term=239
 let g:indentLine_char = '▏'
-let g:indentLine_concealcursor = 0
+let g:indentLine_concealcursor = ''
 
 " Some lightline options
 set showtabline=2  " Show tabline
@@ -157,6 +157,9 @@ autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabsto
 autocmd Filetype javascriptreact setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype java setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+
+" Disable mouse
+set mouse=
 
 " Some LaTeX thing
 let g:Imap_FreezeImap=1
