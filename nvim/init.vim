@@ -126,6 +126,7 @@ let NERDTreeCustomOpenArgs = {'file':{'where':'t'}}
 " Other Keybindings
 nnoremap <Leader>b :<C-u>call gitblame#echo()<CR>
 nnoremap <C-_> :nohl<CR>
+nnoremap Q :e#<CR>
 
 nnoremap <F12> :call ToggleColumns()<CR>
 if has("patch-8.1.1564") || has('nvim')
