@@ -2,9 +2,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'neovim/nvim-lsp'
 Plug 'ncm2/float-preview.nvim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/deoplete-lsp'
-Plug 'ervandew/supertab'
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete-lsp'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'onsails/lspkind-nvim'
+" Plug 'ervandew/supertab'
 Plug 'Chiel92/vim-autoformat'
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
@@ -24,6 +27,9 @@ Plug 'DingDean/wgsl.vim'
 Plug 'ziglang/zig.vim'
 Plug 'gyim/vim-boxdraw'
 Plug 'inkarkat/vim-unconditionalpaste'
+Plug 'olimorris/codecompanion.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-treesitter/nvim-treesitter'
 " Plug 'junegunn/vim-cfr'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " LSP end
@@ -86,6 +92,9 @@ set number relativenumber
 " Highlight current line
 set cursorline
 
+" lua config
+lua require'init'
+
 " rust.vim
 filetype plugin indent on
 
@@ -98,14 +107,14 @@ lua require'lsp'
 autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
 " Enable deoplete autocompletion in Rust files
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 
 set completeopt-=preview
 let g:float_preview#docked = 0
 
 " customise deoplete
 " maximum candidate window length
-call deoplete#custom#source('_', 'max_menu_width', 80)
+" call deoplete#custom#source('_', 'max_menu_width', 80)
 
 " Press Tab to scroll _down_ a list of auto-completions
 let g:SuperTabDefaultCompletionType = "<c-n>"
@@ -163,6 +172,7 @@ autocmd Filetype java setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype terraform setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype hcl setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype nix setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 " Disable mouse
 set mouse=
